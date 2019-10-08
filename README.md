@@ -1,4 +1,5 @@
 # dockeRs
+
 A collection of docker image of various R implementations on various platform both vanilla and with geospatial R packages.
 
 This is part of my master thesis.
@@ -17,7 +18,7 @@ This is part of my master thesis.
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Debian     | :question: | :question: | :question: | :question: | :question: | :question: |
+| Debian     | :question: | :heavy_check_mark: | :question: | :question: | :question: | :question: |
 | Fedora     | :question: | :question: | :question: | :question: | :question: | :question: |
 | Arch Linux | :question: | :question: | :question: | :question: | :question: | :question: |
 
@@ -37,4 +38,4 @@ Each docker image directory contains:
 
 ## Naming
 
-The format is : [R-version]-[platform]-[geospatial].
+The format is : [R-implementation]-[R-version]-[platform]-[geospatial].

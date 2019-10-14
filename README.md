@@ -2,7 +2,7 @@
 
 A collection of docker image of various R implementations on various platform both vanilla and with geospatial R packages.
 
-This is part of my master thesis.
+This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 
 ## Docker Images
 
@@ -33,9 +33,10 @@ Legends:
 Each docker image directory contains:
 
 1. (mandatory) README.MD: description of the docker image and how to obtain it
-2. Dockerfile : the docckerfile, if not available on other source
-3. Error.txt : error message if not possible to create, or related to it
+2. Dockerfile : the dockerfile, if not available on other source
+3. (mandatory) Makefile : Some handy command to run the docker container
+4. Error.txt : error message if not possible to create, or related to it
 
 ## Naming
 
-The format is : [R-implementation]-[R-version]-[platform]-[geospatial].
+The format is : [R-implementation]-[version]-[platform]-[geospatial].

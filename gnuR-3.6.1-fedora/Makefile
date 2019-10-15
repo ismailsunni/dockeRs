@@ -4,4 +4,8 @@ build-dockeRs:
 
 run-dockeRs:
 	@echo "Run GNU-R 3.6.1 on Fedora"
-	docker run -it --rm gnur-fedora:3.6.1
+	docker run -it --rm ismailsunni/gnur-fedora
+
+pull-dockeRs:
+	@echo "Pull GNU-R 3.6.1 on Fedora from Docker Hub."
+	docker pull ismailsunni/gnur-fedora

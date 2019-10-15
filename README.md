@@ -11,7 +11,7 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :question: |
-| Fedora     | :question: | :question: | :question: | :question: | :question: | :question: |
+| Fedora     | :heavy_check_mark: | :question: | :question: | :question: | :question: | :question: |
 | Arch Linux | :question: | :question: | :question: | :question: | :question: | :question: |
 
 ### with Geospatial R Packages

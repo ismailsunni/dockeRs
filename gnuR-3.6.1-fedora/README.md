@@ -7,3 +7,7 @@ You can build it manually using this command from the current directory:
 Or pull from docker hub
 
 `make pull-dockeRs`
+
+Or run R from the docker image
+
+`make run-dockeRs`

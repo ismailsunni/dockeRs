@@ -1,6 +1,13 @@
 # GNU-R 3.6.1 on Debian with Geospatial packages
 
-There is already a docker image for [this] combination:
+You can build it manually using this command from the current directory:
 
-- [Dockerfile](https://github.com/rocker-org/geospatial)
-- [Docker Image](https://hub.docker.com/r/rocker/geospatial)
+`make build-dockeRs`
+
+Or pull from docker hub
+
+`make pull-dockeRs`
+
+Or run R from the docker image
+
+`make run-dockeRs`

@@ -4,7 +4,7 @@ build-dockeRs:
 
 run-dockeRs:
 	@echo "Run GNU-R 3.6.1 on Debian with Geospatial packages Docker image."
-	docker run -it --rm ismailsunni/gnur-3.6.1-debian-geospatial R
+	docker run  -it --rm ismailsunni/gnur-3.6.1-debian-geospatial R
 
 shell-dockeRs:
 	@echo "Run GNU-R 3.6.1 on Debian with Geospatial packages Docker image."
@@ -16,4 +16,4 @@ pull-dockeRs:
 
 check-dockeRs:
 	@echo "Check GNU-R 3.6.1 on Debian with Geospatial packages Docker image."
-	docker run -it --rm ismailsunni/gnur-3.6.1-debian-geospatial Rscript check_packages.R
+	docker run -it --rm ismailsunni/gnur-3.6.1-debian-geospatial:ifgi Rscript check_packages.R

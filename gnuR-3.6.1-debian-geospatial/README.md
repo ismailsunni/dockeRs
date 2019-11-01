@@ -11,3 +11,11 @@ Or pull from docker hub
 Or run R from the docker image
 
 `make run-dockeRs`
+
+Or run package completeness
+
+`make check-dockeRs`
+
+Uninstalled packages:
+
+1. `lgcp`

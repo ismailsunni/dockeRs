@@ -16,4 +16,9 @@ pull-dockeRs:
 
 check-dockeRs:
 	@echo "Check GNU-R 3.6.1 on Debian with Geospatial packages Docker image."
-	docker run -it --rm ismailsunni/gnur-3.6.1-debian-geospatial:ifgi Rscript check_packages.R
+	docker run -it --rm ismailsunni/gnur-3.6.1-debian-geospatial Rscript check_packages.R
+
+test-dockeRs:
+	@echo "Run test/benchmark on the GNU-R 3.6.1 on Debian with Geospatial packages"
+	@# all test files are in the ../test directory.
+	docker run -it -v $(shell pwd)/../test:/home/docker/test --rm ismailsunni/gnur-3.6.1-debian-geospatial /bin/bash

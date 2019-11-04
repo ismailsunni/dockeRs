@@ -26,10 +26,24 @@ file_names <- c(
     # '98-rbascis.Rmd',
     # '99-references.Rmd'
 )
+# Create temp directory
+dir.create(file.path("../temp"))
 # Helper function to make it easier to run
 purl_rmd<- function(name, prefix=baseurl) {
     full_name <- paste0(prefix, name)
-    purl(full_name, output=substr(paste0('./test/', name), 0, nchar(paste0('./test/', name)) - 2))   
+    purl(full_name, output=substr(paste0('../temp/', name), 0, nchar(paste0('../temp/', name)) - 2))   
 }
 # Run for all file_names
 lapply(file_names, purl_rmd)
+
+# Merge the files to one R code.
+r_files <- list.files("../temp", pattern="*R$")
+print(r_files)
+sdsr_file <- file("../test/sdsr.R", "w")
+for (i in r_files){
+    x <- readLines(paste0('../temp/', i))
+    writeLines(x, sdsr_file)
+}
+close(sdsr_file)
+# Remove temp directory
+unlink("../temp", recursive = TRUE)

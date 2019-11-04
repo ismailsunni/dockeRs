@@ -9,3 +9,7 @@ run-dockeRs:
 pull-dockeRs:
 	@echo "Pull GNU-R 3.6.1 on Fedora from Docker Hub."
 	docker pull ismailsunni/gnur-fedora
+
+shell-dockeRs:
+	docker run -it --rm ismailsunni/gnur-fedora /bin/bash
+

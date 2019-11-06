@@ -41,5 +41,6 @@ python-minimal
 qgis
 saga
 swftools
+tk-table
 unixodbc-dev
 zlib1g-dev

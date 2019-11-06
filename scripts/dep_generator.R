@@ -15,7 +15,8 @@ platform = "linux-x86_64-ubuntu-gcc"
 # dep <- sysreqs(desc = file.path(path.package(package = "sf"), "DESCRIPTION"), platform=platform)
 # Initialization
 all_deps = c()
-failed_packages = c()
+# failed packages file
+file.create(paste0("./scripts/", platform, "-failed-packages.txt"))
 i = 0
 for (p in all_packages){
     i = i + 1
@@ -31,11 +32,14 @@ for (p in all_packages){
             # print(all_deps)
         },
         error=function(error_message) {
-            # message("This is my custom message.")
-            message("And below is the error message from R:")
+            message(paste0("Error message from R for : "), p)
             message(error_message)
-            failed_packages = c(failed_packages, p)
-            return(NA)
+            # update failed packages file
+            failed_packages <- readLines(paste0("./scripts/", platform, "-failed-packages.txt"))
+            failed_packages <- sort(c(failed_packages, p))
+            failed_packages_file <- file(paste0("./scripts/", platform, "-failed-packages.txt"))
+            writeLines(failed_packages, failed_packages_file)
+            close(failed_packages_file)
         }
     )
     if (i %% 10 == 0){
@@ -45,23 +49,25 @@ for (p in all_packages){
         dep_file_cache <- file(paste0("./scripts/", platform, "deps-cache.txt"))
         writeLines(all_deps, dep_file_cache)
         close(dep_file_cache)
-
-        # Failed packages
-        if (length(failed_packages) > 0){
-            failed_packages_file <- file(paste0("./scripts/", platform, "failed-packages.txt"))
-            writeLines(failed_packages, failed_packages_file)
-            close(failed_packages_file)
-        } else {
-            print("No failed packages till now")
-        }
     }
-    
 }
 all_deps <- sort(unique(all_deps))
 print(paste0("Total dep : ", length(all_deps)))
 
 # print(all_deps)
-# Write list of package to file, for history
-dep_file <- file(paste0("./scripts/", platform, "deps.txt"))
-writeLines(all_deps, dep_file)
+# Write list of package to file
+dep_file <- file(paste0("./scripts/", platform, "-deps.txt"))
+if (length(all_deps) > 0){
+    writeLines(all_deps, dep_file)
+}
 close(dep_file)
+
+# Failed packages
+failed_packages <- readLines(paste0("./scripts/", platform, "-failed-packages.txt"))
+if (length(failed_packages) > 0){
+    print("Failed packages are: ")
+    print(failed_packages)
+} else {
+   print("No failed packages.")
+}
+

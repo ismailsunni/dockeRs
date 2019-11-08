@@ -7,30 +7,26 @@ all_packages = sort(unique(c(spatial_packages, spatiotemporal_packages)))
 unused_package = c('lgcp')
 all_packages = setdiff(all_packages, unused_package)
 pardir = "./scripts/sysreqs/"
-# spatial_packages
-# spatiotemporal_packages
-
-# manually set platform
-# platform = "linux-x86_64-ubuntu-gcc"
-# platform = "linux-x86_64-fedora-gcc"
 
 platforms = c(
     # "linux-x86_64-arch-gcc",
     # "linux-x86_64-centos6-epel",
     # "linux-x86_64-debian-clang",
-    "linux-x86_64-debian-gcc",
-    "linux-x86_64-fedora-clang",
-    "linux-x86_64-fedora-gcc",
+    # "linux-x86_64-debian-gcc",
+    # "linux-x86_64-fedora-clang",
+    # "linux-x86_64-fedora-gcc",
     "linux-x86_64-ubuntu-gcc"
 )
 for (platform in platforms){
-    # dep <- sysreqs(desc = file.path(path.package(package = "sf"), "DESCRIPTION"), platform=platform)
     # Initialization
     all_deps = c()
+    # Use cache
+    # all_deps = readLines(paste0(pardir, platform, "-deps-cache.txt"))
+    
     # failed packages file
     file.create(paste0(pardir, platform, "-failed-packages.txt"))
     i = 0
-    for (p in all_packages){
+    for (p in all_packages[1:length(all_packages)]){
         i = i + 1
         print(paste0("[",  i, "/", length(all_packages), "] ", platform, " ", p))
         tryCatch(

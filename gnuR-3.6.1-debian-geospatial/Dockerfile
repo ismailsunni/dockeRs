@@ -30,6 +30,7 @@ RUN R -e "install.packages('moveVis');"
 
 WORKDIR /home/docker
 
-COPY check_packages.R check_packages.R
+# Copy needed scripts
+COPY scripts/check_packages.R scripts/spatial_packages.txt scripts/spatiotemporal_packages.txt ./
 
 CMD ["/usr/bin/R", "--no-save"]

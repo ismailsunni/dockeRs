@@ -15,21 +15,25 @@ if (length(spatial_not_installed) == 0){
 } else {
     print("Missing Spatial R packages are:")
     print(spatial_not_installed)
-    spatial_number_installed = length(spatial_packages) - length(spatial_not_installed)
-    print(paste("Installed packages:", spatial_number_installed))
-    print(paste("Not installed packages:", length(spatial_not_installed)))
-    print(paste("Total packages:", length(spatial_packages)))
-    print(paste("Installed percentage:", round(spatial_number_installed / length(spatial_packages) * 10000) / 100, "%"))
 }
+
+spatial_number_installed = length(spatial_packages) - length(spatial_not_installed)
+print(paste("Installed packages:", spatial_number_installed))
+print(paste("Not installed packages:", length(spatial_not_installed)))
+print(paste("Total packages:", length(spatial_packages)))
+print(paste("Installed percentage:", round(spatial_number_installed / length(spatial_packages) * 10000) / 100, "%"))
+
+print("")
 
 if (length(spatiotemporal_not_installed) == 0){
     print("All SpatioTemporal  R packages are installed.")
 } else {
     print("Missing SpatioTemporal R packages are:")
     print(spatiotemporal_not_installed)
-    spatiotemporal_number_installed = length(spatiotemporal_packages) - length(spatiotemporal_not_installed)
-    print(paste("Installed packages:", spatiotemporal_number_installed))
-    print(paste("Not installed packages:", length(spatiotemporal_not_installed)))
-    print(paste("Total packages:", length(spatiotemporal_packages)))
-    print(paste("Installed percentage:", round(spatiotemporal_number_installed / length(spatiotemporal_packages) * 10000) / 100, "%"))
 }
+
+spatiotemporal_number_installed = length(spatiotemporal_packages) - length(spatiotemporal_not_installed)
+print(paste("Installed packages:", spatiotemporal_number_installed))
+print(paste("Not installed packages:", length(spatiotemporal_not_installed)))
+print(paste("Total packages:", length(spatiotemporal_packages)))
+print(paste("Installed percentage:", round(spatiotemporal_number_installed / length(spatiotemporal_packages) * 10000) / 100, "%"))

@@ -14,6 +14,10 @@ pull-dockeRs:
 	@echo "Pull GNU-R 3.6.1 on Debian with Geospatial packages Docker image."
 	docker pull ismailsunni/gnur-3.6.1-debian-geospatial
 
+push-dockeRs:
+	@echo "Push GNU-R 3.6.1 on Debian with Geospatial packages to Docker Hub."
+	docker push ismailsunni/gnur-3.6.1-debian-geospatial
+
 check-dockeRs:
 	@echo "Check GNU-R 3.6.1 on Debian with Geospatial packages Docker image."
 	docker run -it --rm ismailsunni/gnur-3.6.1-debian-geospatial Rscript check_packages.R

@@ -14,11 +14,11 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 | Fedora     | :heavy_check_mark: | :question: | :question: | :question: | :question: | :question: |
 | Arch Linux | :heavy_check_mark: | :question: | :question: | :question: | :question: | :question: |
 
-### with Geospatial R Packages (2/18)
+### with Geospatial R Packages (3/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Debian     | :heavy_check_mark: | :heavy_check_mark: | :question: | :question: | :question: | :question: |
+| Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_multiplication_x: | :question: | :question: | :question: |
 | Fedora     | :question: | :question: | :question: | :question: | :question: | :question: |
 | Arch Linux | :question: | :question: | :question: | :question: | :question: | :question: |
 

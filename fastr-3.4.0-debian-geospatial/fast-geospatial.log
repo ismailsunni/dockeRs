@@ -1,0 +1,31 @@
+Sending build context to Docker daemon  15.36kB
+Step 1/9 : FROM nuest/fastr:R-3.4.0
+ ---> 05391ecdedae
+Step 2/9 : LABEL org.label-schema.name="FastR 3.4.0 on Debian with Geospatial R Packages" 	org.label-schema.description="Docker images of FastR 3.4.0 on Debian with Geospatial R Packages" 	maintainer="Ismail Sunni <imajimatika@gmail.com>"
+ ---> Using cache
+ ---> 4188c9e8f2d9
+Step 3/9 : ENV DEBIAN_FRONTEND=noninteractive
+ ---> Using cache
+ ---> f6f778432904
+Step 4/9 : RUN apt-get update   && apt-get install -y --no-install-recommends     bwidget     cargo     ffmpeg     gdal-bin     git-core     imagemagick     jags     libcairo2-dev     libcurl4-openssl-dev     libfftw3-dev     libgdal-dev     libgeos-dev libgeos++-dev     libgl1-mesa-dev     libglu1-mesa-dev     libgmp-dev     libgsl-dev     libhdf5-dev     libimage-exiftool-perl     libjq-dev     libmagic-dev     libmagick++-dev     libnetcdf-dev     libomp-dev     libopenmpi-dev     libpng-dev     libpq-dev     libproj-dev     libprotobuf-dev     libssh2-1-dev     libssl-dev     libtiff-dev     libudunits2-dev     libv8-dev     libxml2-dev     make     pandoc pandoc-citeproc     protobuf-compiler libprotoc-dev     python-minimal     qgis     saga     unixodbc-dev     zlib1g-dev
+ ---> Using cache
+ ---> c4103417e3e9
+Step 5/9 : RUN mx --dynamicimports graal/compiler R -e "install.packages('ctv');"
+ ---> Using cache
+ ---> 299b3fbf8e09
+Step 6/9 : WORKDIR $FASTR_HOME
+ ---> Running in 940f4590c302
+Removing intermediate container 940f4590c302
+ ---> bbd54fe21d5f
+Step 7/9 : COPY scripts/check_packages.R scripts/spatial_packages.txt scripts/spatiotemporal_packages.txt ./
+ ---> de611846feea
+Step 8/9 : ENTRYPOINT []
+ ---> Running in 3b990c4dc1a1
+Removing intermediate container 3b990c4dc1a1
+ ---> c00a73491b53
+Step 9/9 : CMD [ "mx", "--dynamicimports", "graal/compiler", "R", "--no-save"]
+ ---> Running in e3ea3147a9a8
+Removing intermediate container e3ea3147a9a8
+ ---> 3950779c5064
+Successfully built 3950779c5064
+Successfully tagged ismailsunni/fastr-3.4.0-debian-geospatial:latest

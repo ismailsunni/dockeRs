@@ -27,6 +27,11 @@ RUN apt-get install -y --no-install-recommends \
 	libavfilter-dev
 
 RUN R -e "install.packages('moveVis');"
+RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"
+RUN R -e "install.packages('rnaturalearthdata')"
+
+# For knitting the book.
+RUN R -e "install.packages('bookdown')"
 
 WORKDIR /home/docker
 

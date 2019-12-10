@@ -1,0 +1,7 @@
+configure: pkg-config proj exists, will use it
+configure: using proj.h.
+configure: PROJ: 6.2.0
+checking PROJ: checking whether PROJ and sqlite3 are available for linking:... no
+configure: error: libproj not found in standard or given locations.
+ERROR: configuration failed for package 'sf'
+* removing '/usr/lib64/R/library/sf'

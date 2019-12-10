@@ -71,6 +71,9 @@ RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/dra
 RUN R -e "install.packages('rnaturalearthdata')"
 RUN R -e "install.packages('tidyverse')"
 
+# For knitting the book.
+RUN R -e "install.packages('bookdown')"
+
 # Copy needed scripts (remove this if re-build using the newer ismailsunni/gnur-fedora image)
 COPY scripts/check_packages.R scripts/spatial_packages.txt scripts/spatiotemporal_packages.txt ./
 

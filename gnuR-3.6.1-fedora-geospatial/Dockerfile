@@ -66,6 +66,11 @@ WORKDIR /home/docker
 # Copy RProfile.site for default CRAN
 COPY Rprofile.site /usr/lib64/R/etc/Rprofile.site
 
+RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"
+# RUN R -e "install.packages('starsdata', repos = 'http://pebesma.staff.ifgi.de', type = 'source')"
+RUN R -e "install.packages('rnaturalearthdata')"
+RUN R -e "install.packages('tidyverse')"
+
 # Copy needed scripts (remove this if re-build using the newer ismailsunni/gnur-fedora image)
 COPY scripts/check_packages.R scripts/spatial_packages.txt scripts/spatiotemporal_packages.txt ./
 

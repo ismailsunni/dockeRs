@@ -8,7 +8,7 @@ LABEL org.label-schema.name="GNU R on Fedora" \
 RUN useradd docker
 
 # Install R
-RUN yum install -y -q R
+RUN dnf install -y -q R
 
 WORKDIR /home/docker
 

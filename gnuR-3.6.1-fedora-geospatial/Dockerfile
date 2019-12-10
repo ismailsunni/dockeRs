@@ -54,6 +54,13 @@ RUN R -e "install.packages('ctv', repos='http://cran.us.r-project.org');"
 RUN R -e "library('ctv'); install.views('Spatial', repos='http://cran.us.r-project.org');"
 RUN R -e "library('ctv'); install.views('SpatioTemporal', repos='http://cran.us.r-project.org');"
 
+# Install missing pacakges
+RUN dnf install -y \
+	sqlite \
+	sqlite-devel
+RUN R -e "library('ctv'); update.views('Spatial', repos='http://cran.us.r-project.org');"
+RUN R -e "library('ctv'); update.views('SpatioTemporal', repos='http://cran.us.r-project.org');"
+
 WORKDIR /home/docker
 
 # Copy needed scripts

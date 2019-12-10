@@ -63,7 +63,10 @@ RUN R -e "library('ctv'); update.views('SpatioTemporal', repos='http://cran.us.r
 
 WORKDIR /home/docker
 
-# Copy needed scripts
+# Copy RProfile.site for default CRAN
+COPY Rprofile.site /usr/lib64/R/etc/Rprofile.site
+
+# Copy needed scripts (remove this if re-build using the newer ismailsunni/gnur-fedora image)
 COPY scripts/check_packages.R scripts/spatial_packages.txt scripts/spatiotemporal_packages.txt ./
 
 CMD ["/usr/bin/R", "--no-save"]

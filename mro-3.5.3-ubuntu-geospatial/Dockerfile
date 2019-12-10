@@ -84,6 +84,14 @@ RUN R -e "install.packages('ctv');"
 RUN R -e "library('ctv'); install.views('Spatial');"
 RUN R -e "library('ctv'); install.views('SpatioTemporal');"
 
+RUN R -e "install.packages('tidyverse')"
+RUN R -e "install.packages('stars')"
+RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"
+RUN R -e "install.packages('rnaturalearthdata')"
+
+# For knitting the book.
+RUN R -e "install.packages('bookdown')"
+
 # Return the EULA files
 RUN mv MRO_EULA.txt.temp MRO_EULA.txt \
   && mv MKL_EULA.txt.temp MKL_EULA.txt

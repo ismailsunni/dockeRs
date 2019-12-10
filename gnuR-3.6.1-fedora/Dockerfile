@@ -10,6 +10,9 @@ RUN useradd docker
 # Install R
 RUN dnf install -y -q R
 
+# Copy RProfile.site for default CRAN
+COPY Rprofile.site /usr/lib64/R/etc/Rprofile.site
+
 WORKDIR /home/docker
 
 CMD ["/usr/bin/R", "--no-save"]

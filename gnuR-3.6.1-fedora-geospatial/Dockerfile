@@ -1,0 +1,62 @@
+FROM ismailsunni/gnur-fedora
+
+# Add image metadata
+LABEL org.label-schema.name="GNU R 3.6.1 on Fedora with Geospatial Packages" \
+	org.label-schema.description="GNU R 3.6.1 on Fedora with Geospatial Packages" \ 
+	maintainer="Ismail Sunni <imajimatika@gmail.com>"
+
+# TODO: Install dependency
+RUN dnf install -y \
+	bwidget \
+	cairo-devel \
+	cargo \
+	fftw-devel \
+	file-devel \
+	gdal \
+	gdal-devel \
+	geos-devel \
+	git \
+	gsl-devel \
+	hdf5-devel \
+	ImageMagick \
+	ImageMagick-c++-devel \
+	java-1.8.0-openjdk \
+	jq-devel \
+	libcurl-devel \
+	libomp-devel \
+	libpng-devel \
+	libssh2-devel \
+	libtiff-devel \
+	libxml2-devel \
+	make \
+	mesa-libGL-devel \
+	mesa-libGLU-devel \
+	netcdf-devel \
+	openmpi-devel \
+	openssl-devel \
+	pandoc pandoc-citeproc \
+	postgresql-devel \
+	proj-devel \
+	# proj-epsg \
+	# proj-nad \
+	proj \
+	protobuf-compiler \
+	protobuf-devel \
+	python \
+	udunits2-devel \
+	unixODBC-devel \
+	# v8-314-devel \
+	v8-devel \
+	zlib-devel
+
+# Install CTV, and install Spatial and SpatioTemporal packages.
+RUN R -e "install.packages('ctv', repos='http://cran.us.r-project.org');"
+RUN R -e "library('ctv'); install.views('Spatial', repos='http://cran.us.r-project.org');"
+RUN R -e "library('ctv'); install.views('SpatioTemporal', repos='http://cran.us.r-project.org');"
+
+WORKDIR /home/docker
+
+# Copy needed scripts
+COPY scripts/check_packages.R scripts/spatial_packages.txt scripts/spatiotemporal_packages.txt ./
+
+CMD ["/usr/bin/R", "--no-save"]

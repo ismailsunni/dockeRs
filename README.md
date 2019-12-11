@@ -25,7 +25,7 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 Legends:
 
 - :heavy_check_mark: : Complete
-- :heavy_multiplication_x: : Not complete
+- :x: : Not complete
 - :no_entry: : Will not be check since it won't be useful (i.e. not able to install core geospatial pacakges.)
 - :question: : Unknown / Not tested yet
 

@@ -84,6 +84,9 @@ RUN R -e "install.packages('ctv');"
 RUN R -e "library('ctv'); install.views('Spatial');"
 RUN R -e "library('ctv'); install.views('SpatioTemporal');"
 
+RUN R -e "library('ctv'); update.views('Spatial');"
+RUN R -e "library('ctv'); update.views('SpatioTemporal');"
+
 RUN R -e "install.packages('tidyverse')"
 RUN R -e "install.packages('stars')"
 RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"

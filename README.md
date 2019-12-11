@@ -6,26 +6,27 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 
 ## Docker Images
 
-### Vanilla R (7/18)
+### Vanilla R (11/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :question: |
-| Fedora     | :heavy_check_mark: | :question: | :question: | :question: | :question: | :question: |
-| Arch Linux | :heavy_check_mark: | :question: | :question: | :question: | :question: | :question: |
+| Fedora     | :heavy_check_mark: | :question: | :no_entry: | :question: | :no_entry: | :question: |
+| Arch Linux | :heavy_check_mark: | :question: | :no_entry: | :question: | :no_entry: | :question: |
 
-### with Geospatial R Packages (5/18)
+### with Geospatial R Packages (9/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_multiplication_x: | :question: | :question: | :question: |
-| Fedora     | :question: | :question: | :heavy_multiplication_x: | :question: | :question: | :question: |
-| Arch Linux | :question: | :question: | :heavy_multiplication_x: | :question: | :question: | :question: |
+| Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_multiplication_x: | :question: | :heavy_multiplication_x: | :question: |
+| Fedora     | :heavy_check_mark: | :question: | :heavy_multiplication_x: | :question: | :heavy_multiplication_x: | :question: |
+| Arch Linux | :question: | :question: | :heavy_multiplication_x: | :question: | :heavy_multiplication_x: | :question: |
 
 Legends:
 
 - :heavy_check_mark: : Complete
 - :heavy_multiplication_x: : Not complete
+- :no_entry: : Will not be check since it won't be useful (i.e. not able to install core geospatial pacakges.)
 - :question: : Unknown / Not tested yet
 
 ## Content

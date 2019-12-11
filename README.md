@@ -10,24 +10,24 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :question: |
-| Fedora     | :heavy_check_mark: | :question: | :no_entry: | :question: | :no_entry: | :question: |
-| Arch Linux | :heavy_check_mark: | :question: | :no_entry: | :question: | :no_entry: | :question: |
+| Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :grey_question: |
+| Fedora     | :heavy_check_mark: | :grey_question: | :no_entry: | :grey_question: | :no_entry: | :grey_question: |
+| Arch Linux | :heavy_check_mark: | :grey_question: | :no_entry: | :grey_question: | :no_entry: | :grey_question: |
 
 ### with Geospatial R Packages (9/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :question: | :x: | :question: |
-| Fedora     | :heavy_check_mark: | :question: | :x: | :question: | :x: | :question: |
-| Arch Linux | :question: | :question: | :x: | :question: | :x: | :question: |
+| Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :grey_question: | :x: | :grey_question: |
+| Fedora     | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :grey_question: |
+| Arch Linux | :grey_question: | :grey_question: | :x: | :grey_question: | :x: | :grey_question: |
 
 Legends:
 
 - :heavy_check_mark: : Complete
 - :x: : Not possible
 - :no_entry: : Will not be check since it won't be useful (i.e. not able to install core geospatial pacakges.)
-- :question: : Unknown / Not checked yet
+- :grey_question: : Unknown / Not checked yet
 
 ## Content
 

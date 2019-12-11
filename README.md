@@ -18,16 +18,16 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_multiplication_x: | :question: | :heavy_multiplication_x: | :question: |
-| Fedora     | :heavy_check_mark: | :question: | :heavy_multiplication_x: | :question: | :heavy_multiplication_x: | :question: |
-| Arch Linux | :question: | :question: | :heavy_multiplication_x: | :question: | :heavy_multiplication_x: | :question: |
+| Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :question: | :x: | :question: |
+| Fedora     | :heavy_check_mark: | :question: | :x: | :question: | :x: | :question: |
+| Arch Linux | :question: | :question: | :x: | :question: | :x: | :question: |
 
 Legends:
 
 - :heavy_check_mark: : Complete
-- :x: : Not complete
+- :x: : Not possible
 - :no_entry: : Will not be check since it won't be useful (i.e. not able to install core geospatial pacakges.)
-- :question: : Unknown / Not tested yet
+- :question: : Unknown / Not checked yet
 
 ## Content
 

@@ -7,6 +7,8 @@ LABEL org.label-schema.name="TERR on Debian" \
 
 RUN useradd docker
 
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
+
 WORKDIR /home/docker
 
 # Copy TERR instalation files

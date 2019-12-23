@@ -1,7 +1,13 @@
+# Cache file for downloading system dependencies 
 *cache.txt
 
-*.txt
+# Log file from building docker images
+log*.txt
 
-terr-5.0.0-debian/TERR_Developer_5.0.0_linux24gl23_x86_64/TIB_terrde_5.0.0_linux24gl23_x86_64.tar
+# TERR Installer
+*/TERR_Developer_5.0.0_linux24gl23_x86_64/TIB_terrde_5.0.0_linux24gl23_x86_64.tar
+*/TERR_Developer_5.0.0_linux24gl23_x86_64/lib/
+*/TERR_Developer_5.0.0_linux24gl23_x86_64/License.txt
 
-terr-5.0.0-debian/TERR_Developer_5.0.0_linux24gl23_x86_64/lib/
+# VSCode setting
+.vscode*

@@ -8,7 +8,7 @@ After that you can build it manually using this command from the directory of th
 
 ```bash
 make build-dockeRs
-``
+```
 
 Or run R from the docker image
 

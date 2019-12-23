@@ -6,11 +6,11 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 
 ## Docker Images
 
-### Vanilla R (11/18)
+### Vanilla R (12/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :grey_question: |
+| Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Fedora     | :heavy_check_mark: | :grey_question: | :no_entry: | :grey_question: | :no_entry: | :grey_question: |
 | Arch Linux | :heavy_check_mark: | :grey_question: | :no_entry: | :grey_question: | :no_entry: | :grey_question: |
 

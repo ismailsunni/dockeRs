@@ -1,0 +1,189 @@
+#!/bin/sh
+
+# Make sure that we are using this program from the right directory.
+if [ ! -f ./lib/payload ]
+then
+  echo
+  echo "ERROR: You must invoke the INSTALL script as './INSTALL'.  Change"
+  echo "directory to '`dirname $0`', and run './INSTALL' again."
+  echo
+  exit 1
+fi
+
+# Verify correct CPU architecture
+if [ `uname -m` != "x86_64" ]
+then
+  echo
+  echo "Error: This software must be installed on an 'x86_64' system."
+  echo
+  exit 1
+fi
+
+# # Agree to license
+# less License.txt
+# CONTINUE=T
+# while [ "$CONTINUE" = "T" ]
+# do
+#   WHICH=99999
+#   until [ \( $WHICH -le 2 \) -a \( $WHICH -ge 1 \) ];
+#   do
+#     cat << EOF
+
+# License Options:
+
+# 1:    I accept
+# 2:    I do not accept
+
+# EOF
+
+#     echo "You must enter either a 1 or 2."
+#     echo ""
+#     echo -n "Enter the number of your choice: "
+#     read WHICH;
+#   done
+#   case $WHICH in
+#     1)    CONTINUE=F;;
+#     2)    exit 0;;
+#     *)    echo "You must enter either a 1 or 2." ;;
+#   esac
+# done
+
+# # Prompt for install location
+# MYUID=`id -u`
+# . ./lib/defaults
+# OPT_NUM=2
+# CONTINUE=T
+# while [ "$CONTINUE" = "T" ]
+# do
+#   WHICH=99999
+#   until [ \( $WHICH -le $OPT_NUM \) -a \( $WHICH -ge 0 \) ];
+#   do
+#     cat << EOF
+
+# Configuration Options:
+
+# 1:    Installation Location         "$SNEXT_HOME"
+# 2:    Install Menu Entry            $MENU_DISPLAY
+# 0:    Begin Installation
+
+# EOF
+
+#     echo "You must enter a number between 0 and $OPT_NUM"
+#     echo ""
+#     echo -n "Enter the number of your choice: "
+
+#     read WHICH;
+#   done
+
+#   case $WHICH in
+#     0)    CONTINUE=F;;
+#     1)    echo -n "Enter the location where you would like to install $PRODUCT_NAME: "
+#           read SNEXT_HOME_INPUT
+#           if [ -e $SNEXT_HOME -a ! -d $SNEXT_HOME ]
+#           then
+#             echo "You must not enter the name of an existing file."
+#             echo
+#           else
+#             SNEXT_HOME=$SNEXT_HOME_INPUT
+#           fi
+#           ;;
+#     2)    if [ "$MYUID" = "0" ]
+#           then
+#             MENU_MAX=3
+#           else
+#             MENU_MAX=2
+#           fi
+#           MENU_CONT=T
+#           while [ "$MENU_CONT" = "T" ]
+#           do
+#             cat << EOF
+
+# Do you want to install a menu entry so users can access $PRODUCT_NAME from the GNOME or KDE menu system?
+
+# 1:    No
+# 2:    Yes (for user '$USER' only)
+# EOF
+#             if [ "$MYUID" = "0" ]
+#             then
+#               echo "3:    Yes (for all users)"
+#             fi
+#             cat << EOF
+# 0:    Return to Previous Menu
+
+# EOF
+#             echo -n "Enter the number of your choice: "
+#             MENU_CONT=F
+#             read WHICH
+#             case $WHICH in
+#               0)  ;;
+#               1)  MENU_INSTALL=no
+#                   MENU_DISPLAY="No" ;;
+#               2)  MENU_INSTALL=user
+#                   MENU_DISPLAY="Yes (for user '$USER' only)" ;;
+#               3)  if [ "$MYUID" = "0" ]
+#                   then
+#                     MENU_INSTALL=system
+#                     MENU_DISPLAY="Yes (for all users)"
+#                   else
+#                     echo "You must enter a number between 0 and $MENU_MAX"
+#                     MENU_CONT=T
+#                   fi ;;
+#               *)  echo "You must enter a number between 0 and $MENU_MAX"
+#                   MENU_CONT=T ;;
+#             esac
+#           done
+#           ;;
+#     *)    echo "You must enter a number between 0 and $OPT_NUM" ;;
+#   esac
+# done
+
+# Install
+echo "Installing..."
+echo $SNEXT_HOME
+if ! mkdir -p $SNEXT_HOME
+then
+  echo
+  echo "Error: Cannot create installation directory for $PRODUCT_NAME."
+  echo
+  exit 1
+fi
+if ! tar -zxf ./lib/payload -C $SNEXT_HOME
+then
+  echo
+  echo "Error: Problems unpacking $PRODUCT_NAME into the installation directory."
+  echo
+  exit 1
+fi
+
+APP_DIR=
+if [ "$MENU_INSTALL" = "user" ]
+then
+  APP_DIR=$HOME/.local/share/applications
+fi
+if [ "$MENU_INSTALL" = "system" ]
+then
+  APP_DIR=/usr/share/applications
+fi
+if [ "X$APP_DIR" != "X" ]
+then
+  sed -e "s!@SNEXT_HOME@!$SNEXT_HOME!g" -e "s!@PRODUCT_NAME@!$PRODUCT_NAME!g" < ./lib/tibco-snext.desktop.in > $APP_DIR/tibco-snext.desktop 2>/dev/null
+fi
+
+# Congratulate the user
+cat <<EOF
+You have successfully installed $PRODUCT_NAME.
+To run $PRODUCT_NAME, type:
+
+        $SNEXT_HOME/bin/TERR
+
+EOF
+if [ -f $APP_DIR/tibco-snext.desktop ]
+then
+  cat <<EOF
+You can also select "$PRODUCT_NAME Console" from the "Science" submenu of the GNOME or KDE "Applications" menu.
+
+EOF
+fi
+echo "=== Installation complete."
+exit 0
+

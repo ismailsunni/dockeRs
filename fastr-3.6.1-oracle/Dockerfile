@@ -9,8 +9,6 @@ RUN useradd docker
 
 WORKDIR /home/docker
 
-# COPY r-installable-java8-linux-amd64-19.3.0.jar .
-
 RUN yum -y groupinstall 'Development Tools' && yum -y install gcc-gfortran
 
 RUN gu install R

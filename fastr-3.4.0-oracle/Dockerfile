@@ -15,4 +15,4 @@ RUN yum -y groupinstall 'Development Tools' && yum -y install gcc-gfortran
 
 RUN gu install R
 
-# CMD ["/home/docker/tibco/bin/R", "--no-save"]
+CMD ["R", "--no-save"]

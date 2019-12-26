@@ -79,4 +79,6 @@ RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/dra
 
 RUN R -e "library('ctv'); update.views('SpatioTemporal', repos='https://cloud.r-project.org', coreOnly=TRUE);"
 
+# RUN R -e "library('ctv'); update.views('Spatial', repos='https://cloud.r-project.org');"
+
 CMD ["/home/docker/tibco/bin/R", "--no-save"]

@@ -43,8 +43,7 @@ Trying to download URL 'https://cloud.r-project.org/src/contrib/sp_1.3-2.tar.gz'
 Error in source2binary(dir, install_opts = install_opts) : Cannot rename old binaryDir from '/home/docker/tibco/site-library/sp' to '/home/docker/tibco/site-library/00LOCK--sp'
     Cannot install package from /tmp/TERR_00156b8b45671/source_001574b0dc515/sp
 ```
-
-This error can be avoided by using `ctv`'s command : `update.views()`. But not sure how to fix the problem.
+This will introduce problem whenever I re-install a package.
 
 #### Running Bookdown Error
 

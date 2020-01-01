@@ -86,9 +86,8 @@ RUN yum install -y \
 	proj-epsg \
 	proj-nad
 
-# Update
-RUN R -e "library('ctv'); update.views('Spatial', coreOnly=TRUE);"
-RUN R -e "library('ctv'); update.views('SpatioTemporal', coreOnly=TRUE);"
+# Install missing core packages.
+RUN R -e "install.packages(c('sf', 'rgdal', 'spatialreg'));"
 
 # Remove the downloaded file
 RUN rm -rf gdal-2.2.1 && rm gdal-2.2.1.tar.gz 

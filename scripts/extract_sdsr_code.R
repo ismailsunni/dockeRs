@@ -39,7 +39,7 @@ lapply(file_names, purl_rmd)
 # Merge the files to one R code.
 r_files <- list.files("../temp", pattern="*R$")
 print(r_files)
-sdsr_file <- file("../test/sdsr.R", "w")
+sdsr_file <- file("../sdsr.R", "w")
 for (i in r_files){
     x <- readLines(paste0('../temp/', i))
     writeLines(x, sdsr_file)

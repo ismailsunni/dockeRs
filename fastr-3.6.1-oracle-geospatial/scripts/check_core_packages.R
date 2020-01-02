@@ -29,7 +29,7 @@ if (length(core_spatiotemporal_not_installed) == 0){
     print("All SpatioTemporal  R Core packages are installed.")
 } else {
     print("Missing SpatioTemporal R Core packages are:")
-    print(spatiotemporal_not_installed)
+    print(core_spatiotemporal_not_installed)
 }
 
 core_spatiotemporal_number_installed = length(core_spatiotemporal_packages) - length(core_spatiotemporal_not_installed)

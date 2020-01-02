@@ -22,6 +22,10 @@ check-dockeRs:
 	@echo "Check TERR 5.0.0 on Ubuntu with Geospatial Packages Docker image."
 	docker run -it --rm ismailsunni/terr-5.0.0-ubuntu-geospatial Rscript check_packages.R
 
+check-core-dockeRs:
+	@echo "Check TERR 5.0.0 on Ubuntu with Geospatial Packages Docker image."
+	docker run -it --rm ismailsunni/terr-5.0.0-ubuntu-geospatial Rscript check_core_packages.R
+
 bookdown-dockeRs:
 	@echo "Compile SDSR book with TERR 5.0.0 on Ubuntu with Geospatial Packages Docker image."
 	docker run -it --rm -v /home/ismailsunni/dev/r/sdsr:/home/docker/sdsr ismailsunni/terr-5.0.0-ubuntu-geospatial /bin/bash

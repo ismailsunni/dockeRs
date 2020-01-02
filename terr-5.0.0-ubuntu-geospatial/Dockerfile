@@ -56,7 +56,7 @@ RUN apt update -y && apt install -y --no-install-recommends \
 	unixodbc-dev \
 	zlib1g-dev
 
-COPY scripts/check_packages.R scripts/spatial_packages.txt scripts/spatiotemporal_packages.txt ./
+COPY scripts/* ./
 
 RUN apt install -y r-base-dev
 RUN R -e "install.packages('rinclude'); install.packages('backports');"

@@ -1,0 +1,9 @@
+adehabitatLT
+gstat
+RandomFields
+raster
+sp
+spacetime
+surveillance
+trip
+xts

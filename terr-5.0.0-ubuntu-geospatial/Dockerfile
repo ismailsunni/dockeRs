@@ -61,13 +61,8 @@ COPY scripts/* ./
 RUN apt install -y r-base-dev
 RUN R -e "install.packages('rinclude'); install.packages('backports');"
 
-# Install spatial packages from the list
-# RUN R -e "install.packages(readLines('./spatial_packages.txt')[0:10])"
 RUN R -e "install.packages('ctv', repos='https://cloud.r-project.org');"
 RUN R -e "library('ctv'); install.views('Spatial', repos='https://cloud.r-project.org', coreOnly=TRUE);"
-# RUN R -e "install.packages(readLines('./spatial_packages.txt')[11:20])"
-# RUN R -e "install.packages(readLines('./spatial_packages.txt')[101:194])"
-# RUN R -e "install.packages(readLines('./spatiotemporal_packages.txt'))"
 
 RUN R -e "install.packages('rnaturalearthdata')"
 RUN R -e "install.packages('tidyverse')"
@@ -79,6 +74,10 @@ RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/dra
 
 RUN R -e "library('ctv'); update.views('SpatioTemporal', repos='https://cloud.r-project.org', coreOnly=TRUE);"
 
+# Not able to install all packages, so I tried to install the needed one for SDSR
+RUN R -e "install.packages('datasets')"
+
 # RUN R -e "library('ctv'); update.views('Spatial', repos='https://cloud.r-project.org');"
+# RUN R -e "library('ctv'); update.views('Spatiotemporal', repos='https://cloud.r-project.org');"
 
 CMD ["/home/docker/tibco/bin/R", "--no-save"]

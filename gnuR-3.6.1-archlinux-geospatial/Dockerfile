@@ -49,6 +49,13 @@ RUN pacman -Syu --noconfirm && pacman -S --noconfirm \
 	# v8 \
 	zlib
 
+RUN pacman -S --noconfirm \
+	gcc-fortran \
+	awk
+
+# For building package
+RUN pacman -S base-devel --noconfirm
+
 # These packages below need to be installed from ArchLinux User Repository (https://aur.archlinux.org/)
 # Unfortunatelly, it is not easy.
 # bwidget
@@ -58,19 +65,37 @@ RUN pacman -Syu --noconfirm && pacman -S --noconfirm \
 # udunits
 # v8
 
+# Need to set docker user without password
+RUN echo "docker      ALL = NOPASSWD: ALL" >> /etc/sudoers
 # Switch user to docker
-# RUN su docker
-# RUN git clone https://aur.archlinux.org/bwidget.git; 
-#cd bwidget; makepkg -si;
+USER docker
+# Create temp directory
+RUN mkdir /tmp/packages
+WORKDIR /tmp/packages
+# Install packages from AUR
+RUN git clone https://aur.archlinux.org/bwidget.git; cd bwidget; makepkg -si --noconfirm;
+RUN git clone https://aur.archlinux.org/jags.git; cd jags; makepkg -si --noconfirm;
 
-RUN pacman -S --noconfirm \
-	gcc-fortran \
-	awk
+RUN git clone https://aur.archlinux.org/swftools.git; cd swftools; makepkg -si --noconfirm;
+RUN git clone https://aur.archlinux.org/udunits.git; cd udunits; makepkg -si --noconfirm;
+
+# For installing saga-gis
+RUN git clone https://aur.archlinux.org/lua-hpdf.git; cd lua-hpdf; makepkg -si --noconfirm;
+
+# RUN git clone https://aur.archlinux.org/saga-gis.git; cd saga-gis; makepkg -si --noconfirm;
+# RUN git clone https://aur.archlinux.org/v8.git; cd v8; makepkg -si --noconfirm;
+
+# Back to the main directory
+WORKDIR /home/docker
+# Back to root
+USER root
+# Remove downloaded packages
+RUN rm -rf /tmp/packages
 
 # # Install CTV, and install Spatial and SpatioTemporal packages.
 RUN R -e "install.packages('ctv')"
-RUN R -e "library('ctv'); install.views('Spatial')"
-# RUN R -e "library('ctv'); install.views('SpatioTemporal')"
+RUN R -e "library('ctv'); install.views('Spatial', coreOnly=TRUE)"
+RUN R -e "library('ctv'); install.views('SpatioTemporal', coreOnly=TRUE)"
 
 # # Install missing pacakges
 # RUN dnf install -y \
@@ -81,13 +106,16 @@ RUN R -e "library('ctv'); install.views('Spatial')"
 
 # WORKDIR /home/docker
 
-# RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"
-# RUN R -e "install.packages('rnaturalearthdata')"
-# RUN R -e "install.packages('tidyverse')"
+RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"
+RUN R -e "install.packages('rnaturalearthdata')"
+RUN R -e "install.packages('tidyverse')"
 
 # # For knitting the book.
-# RUN R -e "install.packages('bookdown')"
+RUN R -e "install.packages('bookdown')"
 
-COPY scripts/check_packages.R scripts/spatial_packages.txt scripts/spatiotemporal_packages.txt ./
+RUN R -e "library('ctv'); update.views('Spatial')"
+RUN R -e "library('ctv'); update.views('SpatioTemporal')"
+
+COPY scripts/* ./
 
 CMD ["/usr/bin/R", "--no-save"]

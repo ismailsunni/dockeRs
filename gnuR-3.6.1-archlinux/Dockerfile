@@ -7,6 +7,9 @@ LABEL org.label-schema.name="GNU R on Arch Linux" \
 
 RUN useradd docker
 
+# Install sudoers and fakeroot
+RUN pacman -Syu --noconfirm && pacman -Sy --noconfirm sudo fakeroot
+
 # Install R
 RUN pacman -Sy --noconfirm r
 

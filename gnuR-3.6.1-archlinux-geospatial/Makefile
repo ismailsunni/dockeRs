@@ -18,6 +18,10 @@ push-dockeRs:
 	@echo "Push GNU-R 3.6.1 on Arch Linux with Geospatial packages to Docker Hub."
 	docker push ismailsunni/gnur-3.6.1-archlinux-geospatial
 
+bookdown-dockeRs:
+	@echo "Compile SDSR book with GNU-R 3.6.1 on Arch Linux with Geospatial packages Docker image."
+	docker run -it --rm -v /home/ismailsunni/dev/r/sdsr:/home/docker/sdsr ismailsunni/gnur-3.6.1-archlinux-geospatial /bin/bash
+
 check-dockeRs:
 	@echo "Check GNU-R 3.6.1 on Arch Linux with Geospatial packages Docker image."
 	docker run -it --rm ismailsunni/gnur-3.6.1-archlinux-geospatial Rscript check_packages.R

@@ -6,12 +6,12 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 
 ## Docker Images
 
-### Vanilla R (15/18)
+### Vanilla R (16/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Fedora     | :heavy_check_mark: | :grey_question: | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: |
+| Fedora     | :heavy_check_mark: | :heavy_check_mark: | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: |
 | Arch Linux | :heavy_check_mark: | :grey_question: | :no_entry: | :grey_question: | :no_entry: | :no_entry: |
 
 ### with Geospatial R Packages (13/18)

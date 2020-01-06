@@ -6,7 +6,7 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 
 ## Docker Images
 
-### Vanilla R (13/18)
+### Vanilla R (15/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
@@ -14,13 +14,13 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 | Fedora     | :heavy_check_mark: | :grey_question: | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: |
 | Arch Linux | :heavy_check_mark: | :grey_question: | :no_entry: | :grey_question: | :no_entry: | :no_entry: |
 
-### with Geospatial R Packages (9/18)
+### with Geospatial R Packages (14/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :grey_question: | :x: | :grey_question: |
-| Fedora     | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :x: |
-| Arch Linux | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :x: |
+| Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :grey_question: | :x: | :heavy_check_mark: |
+| Fedora     | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :heavy_check_mark: |
+| Arch Linux | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :heavy_check_mark: |
 
 Legends:
 
@@ -28,6 +28,10 @@ Legends:
 - :x: : Not possible
 - :no_entry: : Will not be check since it won't be useful (i.e. not able to install core geospatial pacakges.)
 - :grey_question: : Unknown / Not checked yet
+
+### SDSR's benchmark result
+
+TODO: Add result of benchmark result here. (error and the result)
 
 ## Content
 

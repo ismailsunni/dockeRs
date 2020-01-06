@@ -14,13 +14,13 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 | Fedora     | :heavy_check_mark: | :grey_question: | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: |
 | Arch Linux | :heavy_check_mark: | :grey_question: | :no_entry: | :grey_question: | :no_entry: | :no_entry: |
 
-### with Geospatial R Packages (14/18)
+### with Geospatial R Packages (13/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :grey_question: | :x: | :heavy_check_mark: |
-| Fedora     | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :heavy_check_mark: |
-| Arch Linux | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :heavy_check_mark: |
+| Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :grey_question: | :x: | :x: |
+| Fedora     | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :x: |
+| Arch Linux | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :x: |
 
 Legends:
 
@@ -29,9 +29,14 @@ Legends:
 - :no_entry: : Will not be check since it won't be useful (i.e. not able to install core geospatial pacakges.)
 - :grey_question: : Unknown / Not checked yet
 
-### SDSR's benchmark result
+### SDSR's benchmark status
 
-TODO: Add result of benchmark result here. (error and the result)
+| OS | R | Benchmark Status | Notes | 
+|:---------:|:--------:|:--------:|------|
+| Debian | GNU R | Success | |
+| Fedora | GNU R | Success | |
+| Arch Linux | GNU R | Failed | [Error's message](./gnuR-3.6.1-archlinux-geospatial#sdsr-benchmark-problem)|
+| Ubuntu | MRO | Success | |
 
 ## Content
 

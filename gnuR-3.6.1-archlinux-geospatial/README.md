@@ -20,9 +20,27 @@ Or run package completeness
 
 ### Spatial Packages
 
-TBA
+```bash
+[1] "Missing Spatial R packages are:"
+ [1] "geojsonio"     "geoR"          "geoRglm"       "lawn"         
+ [5] "OpenStreetMap" "PBSmodelling"  "rcosmo"        "RSurvey"      
+ [9] "spatsurv"      "spcosa"       
+[1] "Installed packages: 184"
+[1] "Not installed packages: 10"
+[1] "Total packages: 194"
+[1] "Installed percentage: 94.85 %"
+```
 
 ### Spatiotemporal Packages
+
+```bash
+[1] "Missing SpatioTemporal R packages are:"
+[1] "crawl"      "lgcp"       "momentuHMM" "recurse"    "trackeRapp"
+[1] "Installed packages: 99"
+[1] "Not installed packages: 5"
+[1] "Total packages: 104"
+[1] "Installed percentage: 95.19 %"
+```
 
 TBA
 
@@ -32,7 +50,7 @@ TBA
 
 Not able to install saga-gis
 
-```
+```bash
 libtool: compile:  g++ -std=gnu++11 -DHAVE_CONFIG_H -I. -I../../../.. -D_FORTIFY_SOURCE=2 -fPIC -I../../../../src/saga_core -I/usr/include -DUSE_GDAL_V2 -D_SAGA_LINUX -D_TYPEDEF_BYTE -D_TYPEDEF_WORD -fopenmp -lgomp -I/usr/lib/wx/include/gtk2-unicode-3.0 -I/usr/include/wx-3.0 -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ -pthread -MT gdal_import_wms.lo -MD -MP -MF .deps/gdal_import_wms.Tpo -c gdal_import_wms.cpp -o gdal_import_wms.o >/dev/null 2>&1
 make[5]: Leaving directory '/tmp/packages/saga-gis/src/saga-7.4.0/src/tools/io/io_gdal'
 make[4]: *** [Makefile:412: all-recursive] Error 1
@@ -53,7 +71,7 @@ The command '/bin/sh -c git clone https://aur.archlinux.org/saga-gis.git; cd sag
 
 Error in instaling `v8`
 
-```
+```bash
 ==> Starting prepare()...
   -> Using: /tmp/packages/v8/src/bin/python
   -> Fetching V8 code
@@ -77,4 +95,22 @@ Error in instaling `v8`
 [E2020-01-03T17:51:01.207404Z 1382 0 annotate.go:241] #10 runtime/proc.go:203 - runtime.main()
 [E2020-01-03T17:51:01.207416Z 1382 0 annotate.go:241] #11 runtime/asm_amd64.s:1357 - runtime.goexit()
 ==> ERROR: A failure occurred in prepare().
+```
+
+## SDSR benchmark problem
+
+```bash
+label: world (with options) 
+List of 4
+ $ fig.cap: chr "Earth country boundaries; left: mapping long/lat to x and y; right: as seen from space"
+ $ fig    : logi TRUE
+ $ echo   : logi FALSE
+ $ message: logi FALSE
+
+Quitting from lines 3029-3066 (sds.Rmd) 
+Error in geos_op2_geom("intersection", x, y) : 
+  st_crs(x) == st_crs(y) is not TRUE
+Calls: <Anonymous> ... handle -> withCallingHandlers -> withVisible -> eval -> eval
+
+Execution halted
 ```

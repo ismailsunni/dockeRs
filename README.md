@@ -11,16 +11,16 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Fedora     | :heavy_check_mark: | :grey_question: | :no_entry: | :heavy_check_mark: | :no_entry: | :grey_question: |
-| Arch Linux | :heavy_check_mark: | :grey_question: | :no_entry: | :grey_question: | :no_entry: | :grey_question: |
+| Fedora     | :heavy_check_mark: | :grey_question: | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: |
+| Arch Linux | :heavy_check_mark: | :grey_question: | :no_entry: | :grey_question: | :no_entry: | :no_entry: |
 
 ### with Geospatial R Packages (9/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :grey_question: | :x: | :grey_question: |
-| Fedora     | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :grey_question: |
-| Arch Linux | :grey_question: | :grey_question: | :x: | :grey_question: | :x: | :grey_question: |
+| Fedora     | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :x: |
+| Arch Linux | :heavy_check_mark: | :grey_question: | :x: | :grey_question: | :x: | :x: |
 
 Legends:
 

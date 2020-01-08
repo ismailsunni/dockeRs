@@ -11,6 +11,8 @@ WORKDIR /home/docker
 
 RUN yum -y groupinstall 'Development Tools' && yum -y install gcc-gfortran
 
+RUN dnf install -y findutils
+
 RUN gu install R
 
 CMD ["R", "--no-save"]

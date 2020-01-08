@@ -42,11 +42,9 @@ Or run package completeness
 [1] "Installed percentage: 95.19 %"
 ```
 
-TBA
+## Errors
 
-### Errors
-
-#### saga-gis
+### saga-gis
 
 Not able to install saga-gis
 
@@ -67,7 +65,7 @@ make: *** [Makefile:427: all] Error 2
 The command '/bin/sh -c git clone https://aur.archlinux.org/saga-gis.git; cd saga-gis; makepkg -si --noconfirm;' returned a non-zero code: 4
 ```
 
-#### v8
+### v8
 
 Error in instaling `v8`
 
@@ -95,6 +93,86 @@ Error in instaling `v8`
 [E2020-01-03T17:51:01.207404Z 1382 0 annotate.go:241] #10 runtime/proc.go:203 - runtime.main()
 [E2020-01-03T17:51:01.207416Z 1382 0 annotate.go:241] #11 runtime/asm_amd64.s:1357 - runtime.goexit()
 ==> ERROR: A failure occurred in prepare().
+```
+
+### geojsonio
+
+```bash
+** using staged installation
+'config' variable 'CXXCPP' is deprecated
+Using PKG_CFLAGS=-I/usr/include/v8 -I/usr/include/v8-3.14
+Using PKG_LIBS=-lv8 -lv8_libplatform
+------------------------- ANTICONF ERROR ---------------------------
+Configuration failed because  was not found. Try installing:
+ * deb: libv8-dev or libnode-dev (Debian / Ubuntu)
+ * rpm: v8-devel (Fedora, EPEL)
+ * brew: v8 (OSX)
+ * csw: libv8_dev (Solaris)
+To use a custom libv8, set INCLUDE_DIR and LIB_DIR manually via:
+R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+--------------------------------------------------------------------
+ERROR: configuration failed for package ‘V8’
+* removing ‘/usr/lib/R/library/V8’
+ERROR: dependency ‘V8’ is not available for package ‘geojsonio’
+* removing ‘/usr/lib/R/library/geojsonio’
+
+The downloaded source packages are in
+        ‘/tmp/Rtmp3TRkug/downloaded_packages’
+Warning messages:
+1: In install.packages("geojsonio") :
+  installation of package ‘V8’ had non-zero exit status
+2: In install.packages("geojsonio") :
+  installation of package ‘geojsonio’ had non-zero exit status
+```
+
+### geoR
+
+```bash
+rror: .onLoad failed in loadNamespace() for 'tcltk', details:
+  call: dyn.load(file, DLLpath = DLLpath, ...)
+  error: unable to load shared object '/usr/lib/R/library/tcltk/libs/tcltk.so':
+  libtk8.6.so: cannot open shared object file: No such file or directory
+Execution halted
+ERROR: lazy loading failed for package ‘geoR’
+* removing ‘/usr/lib/R/library/geoR’
+
+The downloaded source packages are in
+        ‘/tmp/Rtmp3TRkug/downloaded_packages’
+Warning message:
+In install.packages("geoR") :
+  installation of package ‘geoR’ had non-zero exit status
+```
+
+### trackeRapp
+
+```bash
+* installing *source* package ‘V8’ ...
+** package ‘V8’ successfully unpacked and MD5 sums checked
+** using staged installation
+'config' variable 'CXXCPP' is deprecated
+Using PKG_CFLAGS=-I/usr/include/v8 -I/usr/include/v8-3.14
+Using PKG_LIBS=-lv8 -lv8_libplatform
+------------------------- ANTICONF ERROR ---------------------------
+Configuration failed because  was not found. Try installing:
+ * deb: libv8-dev or libnode-dev (Debian / Ubuntu)
+ * rpm: v8-devel (Fedora, EPEL)
+ * brew: v8 (OSX)
+ * csw: libv8_dev (Solaris)
+To use a custom libv8, set INCLUDE_DIR and LIB_DIR manually via:
+R CMD INSTALL --configure-vars='INCLUDE_DIR=... LIB_DIR=...'
+--------------------------------------------------------------------
+ERROR: configuration failed for package ‘V8’
+* removing ‘/usr/lib/R/library/V8’
+ERROR: dependency ‘V8’ is not available for package ‘trackeRapp’
+* removing ‘/usr/lib/R/library/trackeRapp’
+
+The downloaded source packages are in
+        ‘/tmp/Rtmp3TRkug/downloaded_packages’
+Warning messages:
+1: In install.packages("trackeRapp") :
+  installation of package ‘V8’ had non-zero exit status
+2: In install.packages("trackeRapp") :
+  installation of package ‘trackeRapp’ had non-zero exit status
 ```
 
 ## SDSR benchmark problem

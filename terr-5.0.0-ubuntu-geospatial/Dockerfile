@@ -76,6 +76,7 @@ RUN R -e "library('ctv'); update.views('SpatioTemporal', repos='https://cloud.r-
 
 # Not able to install all packages, so I tried to install the needed one for SDSR
 RUN R -e "install.packages('datasets')"
+RUN R -e "install.packages('stars')"
 
 # RUN R -e "library('ctv'); update.views('Spatial', repos='https://cloud.r-project.org');"
 # RUN R -e "library('ctv'); update.views('Spatiotemporal', repos='https://cloud.r-project.org');"

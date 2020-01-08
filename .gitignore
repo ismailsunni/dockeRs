@@ -11,3 +11,6 @@ log*.txt
 
 # VSCode setting
 .vscode*
+
+# Temporary directory
+temp/*

@@ -67,15 +67,18 @@ RUN R -e "library('ctv'); install.views('SpatioTemporal', coreOnly=TRUE);"
 # 	sqlite-devel
 
 RUN R -e "library('ctv'); update.views('Spatial');"
-# RUN R -e "library('ctv'); update.views('SpatioTemporal');"
+RUN R -e "library('ctv'); update.views('SpatioTemporal');"
 
-# RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"
-# # RUN R -e "install.packages('starsdata', repos = 'http://pebesma.staff.ifgi.de', type = 'source')"
-# RUN R -e "install.packages('rnaturalearthdata')"
-# RUN R -e "install.packages('tidyverse')"
+RUN R -e "install.packages('spDataLarge', repos = 'https://nowosad.github.io/drat/', type = 'source')"
+# RUN R -e "install.packages('starsdata', repos = 'http://pebesma.staff.ifgi.de', type = 'source')"
+RUN R -e "install.packages('rnaturalearthdata')"
+RUN R -e "install.packages('tidyverse')"
 
 # # For knitting the book.
-# RUN R -e "install.packages('bookdown')"
+RUN R -e "install.packages('bookdown')"
+
+# Install missing `which` package
+RUN dnf install -y which
 
 # Copy needed scripts (remove this if re-build using the newer ismailsunni/gnur-fedora image)
 COPY scripts/*  ./

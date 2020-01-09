@@ -26,7 +26,7 @@ Legends:
 
 - :heavy_check_mark: : Complete
 - :x: : Not possible
-- :no_entry: : Will not be check since it won't be useful (i.e. not able to install core geospatial pacakges.)
+- :no_entry: : Won't be checked because it is not supported based on other result
 - :grey_question: : Unknown / Not checked yet
 
 ### SDSR's benchmark status

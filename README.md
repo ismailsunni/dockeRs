@@ -12,7 +12,7 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Fedora     | :heavy_check_mark: | :heavy_check_mark: | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: |
-| Arch Linux | :heavy_check_mark: | :x: | :no_entry: | :question: | :no_entry: | :no_entry: |
+| Arch Linux | :heavy_check_mark: | :heavy_check_mark: | :no_entry: | :question: | :no_entry: | :no_entry: |
 
 ### with Geospatial R Packages (15/18)
 

@@ -18,15 +18,51 @@ Or run package completeness
 
 ## Uninstalled packages
 
-### Spatial Packages
+### Spatial CORE Packages
 
-TBA
+```R
+[1] "Missing Spatial R Core packages are:"
+[1] "spatialreg"
+[1] "Installed core packages: 17"
+[1] "Not installed core packages: 1"
+[1] "Total core packages: 18"
+[1] "Installed core percentage: 94.44 %"
+```
 
 ### Spatiotemporal Packages
 
-TBA
+```R
+[1] ""
+[1] "All SpatioTemporal  R Core packages are installed."
+[1] "Installed core packages: 9"
+[1] "Not installed core packages: 0"
+[1] "Total core packages: 9"
+[1] "Installed core percentage: 100 %"
+```
 
-### Problems
+## Problems
+
+### `sf`
+
+Running this code:
+
+```R
+library('sf')
+nc_gpkg_file = system.file("gpkg/nc.gpkg", package="sf")
+nc_gpkg_file # /opt/graalvm-ce-java8-19.3.0/jre/languages/R/library/sf/gpkg/nc.gpkg
+file.exists(nc_gpkg_file)  # TRUE
+ read_sf(nc_gpkg_file)
+```
+
+Get his problem
+
+```bash
+Cannot open data source /opt/graalvm-ce-java8-19.3.0/jre/languages/R/library/sf/gpkg/nc.gpkg
+Error in CPL_read_ogr(dsn, layer, query, as.character(options), quiet,  :
+  Open failed.
+```
+
+### Old Pandoc
 
 Since it uses Oracle Linux base image, it has outdated libraries/dependencies.  For example, I need to install GDAL from scratch. When I test with SDSR book, I need Pandoc version 1.17.2 (at least). And it is not easy to install it in Oracle Linux. Here is a rant about installing Pandoc on CentOS (similar to Oracle Linux).
 

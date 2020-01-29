@@ -20,7 +20,7 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: |
 | Fedora     | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: |
-| Arch Linux | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
+| Arch Linux | :heavy_check_mark: | :question: | :x: | :x: | :x: | :x: |
 
 Legends:
 

@@ -6,21 +6,21 @@ This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
 
 ## Docker Images
 
-### Vanilla R (17/18)
+### Vanilla R (18/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 | Debian     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Fedora     | :heavy_check_mark: | :heavy_check_mark: | :no_entry: | :heavy_check_mark: | :no_entry: | :no_entry: |
-| Arch Linux | :heavy_check_mark: | :heavy_check_mark: | :no_entry: | :question: | :no_entry: | :no_entry: |
+| Arch Linux | :heavy_check_mark: | :heavy_check_mark: | :no_entry: | :no_entry: | :no_entry: | :no_entry: |
 
-### with Geospatial R Packages (15/18)
+### with Geospatial R Packages (18/18)
 
 |            |    GNU-R   |     MRO    |   Renjin   |    FastR   |     pqR    |    TERR    |
 |------------|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
-| Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :question: | :x: | :x: |
-| Fedora     | :heavy_check_mark: | :heavy_check_mark: | :x: | :question: | :x: | :x: |
-| Arch Linux | :heavy_check_mark: | :x: | :x: | :question: | :x: | :x: |
+| Debian     | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: |
+| Fedora     | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: |
+| Arch Linux | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: |
 
 Legends:
 

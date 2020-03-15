@@ -34,12 +34,7 @@ Legends:
 
 ### SDSR's benchmark status
 
-| OS | R | Benchmark Status | Notes | 
-|:---------:|:--------:|:--------:|------|
-| Debian | GNU R | Success | |
-| Fedora | GNU R | Success | |
-| Arch Linux | GNU R | Failed | [Error's message](./gnuR-3.6.1-archlinux-geospatial#sdsr-benchmark-problem)|
-| Ubuntu | MRO | Success | |
+For more detailed result can be read in my [master thesis](https://github.com/ismailsunni/MasterThesis).
 
 ## Content
 

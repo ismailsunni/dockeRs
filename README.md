@@ -1,5 +1,7 @@
 # dockeRs
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3671417.svg)](https://doi.org/10.5281/zenodo.3671417)
+
 A collection of docker image of various R implementations on various platform both vanilla and with geospatial R packages.
 
 This is part of my [master thesis](https://github.com/ismailsunni/MasterThesis).
